@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* container styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f5f7fa;
+}
+
+
+/* login styles */
+
+/* Login card */
+.login-card {
+    width: 350px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Heading */
+.login-card h2 {
+    color: #2563eb;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Form */
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+/* Inputs */
+.login-card input {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.login-card input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* Button */
+.login-card button {
+    padding: 12px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-card button:hover {
+    background: #1d4ed8;
+}
+
+/* Text below */
+.login-card p {
+    font-size: 14px;
+    color: #374151;
+}
+
+.login-card .link {
+    color: #2563eb;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.login-card .link:hover {
+    color: #1a50c4;
+}
+
+/* media queries */
+
+/* When screen size is 1020px or smaller */
+@media screen and (max-width: 1020px) {
+    .container {
+        width: 85%;
+        background: green;
+    }
+}
+
+/* When screen size is 780px or smaller */
+@media screen and (max-width: 780px) {
+    .container {
+        width: 90%;
+        background: blue;
+    }
+}
+
+/* When screen size is 480px or smaller */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+        background: black;
+    }
+}
