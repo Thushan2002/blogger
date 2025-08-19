@@ -6,6 +6,7 @@
 
 a {
     text-decoration: none;
+    color: #1d4ed8;
 }
 
 /* container styles */
@@ -95,13 +96,85 @@ a {
     color: #1a50c4;
 }
 
+
+/* register */
+
+.register-card {
+    width: 400px;
+    padding: 35px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.register-card h2 {
+    color: #2563eb;
+    /* green accent for Register */
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.register-card form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.register-card input {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.register-card input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.register-card button {
+    padding: 12px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.register-card button:hover {
+    background: #0e48c4;
+}
+
+.register-card p {
+    font-size: 14px;
+    color: #374151;
+}
+
+.register-card .link {
+    color: #2563eb;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.register-card .link:hover {
+    text-decoration: underline;
+}
+
 /* media queries */
 
 /* When screen size is 1020px or smaller */
 @media screen and (max-width: 1020px) {
     .container {
         width: 85%;
-        background: green;
     }
 }
 
@@ -109,7 +182,6 @@ a {
 @media screen and (max-width: 780px) {
     .container {
         width: 90%;
-        background: blue;
     }
 }
 
@@ -117,6 +189,5 @@ a {
 @media screen and (max-width: 480px) {
     .container {
         width: 95%;
-        background: black;
     }
 }
