@@ -27,9 +27,6 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 /* Logo */
@@ -95,7 +92,7 @@ a {
     cursor: pointer;
 }
 
-/* ✅ Responsive styles */
+/* Responsive styles */
 @media screen and (max-width: 768px) {
     .nav-links {
         position: absolute;
@@ -115,6 +112,265 @@ a {
 
     .nav-toggle {
         display: block;
+    }
+}
+
+/* posts */
+
+/* Posts Grid */
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px;
+    background: #f9fafb;
+}
+
+/* Post Row (flex row for even/odd alternates) */
+.post-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Odd → image left */
+.post-row.odd {
+    flex-direction: row;
+}
+
+/* Even → image right */
+.post-row.even {
+    flex-direction: row-reverse;
+}
+
+/* Post Image */
+.post-image img {
+    width: 350px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Post Content */
+.post-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.post-category {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.post-content h3 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.post-content h3 a {
+    color: #111827;
+    text-decoration: none;
+}
+
+.post-content h3 a:hover {
+    color: #2563eb;
+}
+
+/* Description */
+.post-content p {
+    font-size: 15px;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+/* Read More Button */
+.read-more {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 8px 14px;
+    background: #2563eb;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+    width: fit-content;
+}
+
+.read-more:hover {
+    background: #1d4ed8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .post-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .post-row.even {
+        flex-direction: column;
+    }
+
+    .post-image img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .post-content {
+        align-items: center;
+    }
+}
+
+/* single post */
+
+/* Container */
+.single-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #f9fafb;
+}
+
+/* Card Layout */
+.single-card {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Post Image */
+.single-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Post Content */
+.single-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Category */
+.single-category {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Title */
+.single-content h1 {
+    font-size: 28px;
+    color: #111827;
+    margin: 0;
+}
+
+/* Description */
+.single-desc {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4b5563;
+}
+
+/* Owner Section */
+.single-owner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 10px;
+}
+
+.single-owner img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.single-owner h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #111827;
+}
+
+.single-owner span {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Actions (Edit/Delete) */
+.single-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.single-actions button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Edit button */
+.edit-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Delete button */
+.delete-btn {
+    background: #dc2626;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .single-card {
+        max-width: 100%;
+    }
+
+    .single-image {
+        height: 250px;
+    }
+
+    .single-content h1 {
+        font-size: 22px;
     }
 }
 
