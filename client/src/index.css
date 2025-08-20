@@ -268,6 +268,48 @@ a {
     text-decoration: underline;
 }
 
+
+/* footer */
+
+.footer {
+    background: #1f2937;
+    /* dark gray */
+    color: #d1d5db;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Footer links */
+.footer-links {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* Responsive footer */
+@media screen and (min-width: 600px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
 /* media queries */
 
 /* When screen size is 1020px or smaller */
