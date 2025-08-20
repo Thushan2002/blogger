@@ -27,9 +27,6 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 /* Logo */
@@ -95,7 +92,7 @@ a {
     cursor: pointer;
 }
 
-/* ✅ Responsive styles */
+/* Responsive styles */
 @media screen and (max-width: 768px) {
     .nav-links {
         position: absolute;
@@ -115,6 +112,554 @@ a {
 
     .nav-toggle {
         display: block;
+    }
+}
+
+/* posts */
+
+/* Posts Grid */
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px;
+    background: #f9fafb;
+}
+
+/* Post Row (flex row for even/odd alternates) */
+.post-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Odd → image left */
+.post-row.odd {
+    flex-direction: row;
+}
+
+/* Even → image right */
+.post-row.even {
+    flex-direction: row-reverse;
+}
+
+/* Post Image */
+.post-image img {
+    width: 350px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Post Content */
+.post-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.post-category {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.post-content h3 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.post-content h3 a {
+    color: #111827;
+    text-decoration: none;
+}
+
+.post-content h3 a:hover {
+    color: #2563eb;
+}
+
+/* Description */
+.post-content p {
+    font-size: 15px;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+/* Read More Button */
+.read-more {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 8px 14px;
+    background: #2563eb;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+    width: fit-content;
+}
+
+.read-more:hover {
+    background: #1d4ed8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .post-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .post-row.even {
+        flex-direction: column;
+    }
+
+    .post-image img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .post-content {
+        align-items: center;
+    }
+}
+
+/* single post */
+
+/* Container */
+.single-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #f9fafb;
+}
+
+/* Card Layout */
+.single-card {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Post Image */
+.single-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Post Content */
+.single-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Category */
+.single-category {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Title */
+.single-content h1 {
+    font-size: 28px;
+    color: #111827;
+    margin: 0;
+}
+
+/* Description */
+.single-desc {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4b5563;
+}
+
+/* Owner Section */
+.single-owner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 10px;
+}
+
+.single-owner img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.single-owner h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #111827;
+}
+
+.single-owner span {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Actions (Edit/Delete) */
+.single-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.single-actions button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Edit button */
+.edit-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Delete button */
+.delete-btn {
+    background: #dc2626;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .single-card {
+        max-width: 100%;
+    }
+
+    .single-image {
+        height: 250px;
+    }
+
+    .single-content h1 {
+        font-size: 22px;
+    }
+}
+
+/* write post */
+
+.write-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #f9fafb;
+    min-height: 100vh;
+}
+
+.write-card {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.write-card h2 {
+    color: #2563eb;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+}
+
+.write-card input,
+.write-card select {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+.write-card input:focus,
+.write-card select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Editor Header */
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Editor Toolbar */
+.editor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    background: #f9fafb;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.editor-toolbar button {
+    padding: 8px 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+}
+
+.editor-toolbar button:hover:not(:disabled) {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+.editor-toolbar button.active {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+.editor-toolbar button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.editor-toolbar .icon {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.character-count {
+    font-size: 12px;
+    color: #6b7280;
+    background: #f3f4f6;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Editor Wrapper */
+.editor-wrapper {
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 16px;
+    min-height: 300px;
+    background: #fff;
+    transition: border-color 0.2s;
+}
+
+.editor-wrapper:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Prose styles for the editor content */
+.prose h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0.67em 0;
+}
+
+.prose h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0.83em 0;
+}
+
+.prose h3 {
+    font-size: 1.17em;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.prose p {
+    margin: 1em 0;
+}
+
+.prose ul,
+.prose ol {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+.prose blockquote {
+    border-left: 4px solid #ddd;
+    margin: 1em 0;
+    padding-left: 1em;
+    color: #666;
+}
+
+.prose a {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* Image Upload */
+.image-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.image-upload-btn {
+    padding: 10px 16px;
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.image-upload-btn:hover {
+    background: #e5e7eb;
+}
+
+.hidden-file-input {
+    display: none;
+}
+
+.file-name {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Image Preview */
+.image-preview {
+    text-align: center;
+    margin: 16px 0;
+    padding: 16px;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+}
+
+.image-preview p {
+    margin: 0 0 12px 0;
+    font-weight: 600;
+    color: #374151;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
+}
+
+.remove-image-btn {
+    padding: 8px 16px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.remove-image-btn:hover {
+    background: #dc2626;
+}
+
+/* Publish button */
+.publish-btn {
+    background: #2563eb;
+    color: #fff;
+    font-weight: bold;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.publish-btn:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.publish-btn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .write-container {
+        padding: 20px 16px;
+    }
+
+    .write-card {
+        padding: 20px;
+    }
+
+    .editor-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .editor-toolbar {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 8px;
     }
 }
 
